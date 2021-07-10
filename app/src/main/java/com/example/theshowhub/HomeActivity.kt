@@ -2,6 +2,8 @@ package com.example.theshowhub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theshowhub.databinding.ActivityHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,11 +42,14 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun onListFetched(movies: List<Movie>) {
-
+        val adapter = MovieAdapter()
+        viewBinding.showsRecycleView.adapter = adapter
+        viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
+        adapter.setMovies(movies)
     }
 
     private fun onError(exception: Exception) {
-
+        Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
     }
 
 }
