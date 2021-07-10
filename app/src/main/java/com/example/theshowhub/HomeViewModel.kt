@@ -21,11 +21,14 @@ class HomeViewModel(
 
         viewModelScope.launch {
             val result = homeInteractor.fetchTopRatedShows()
-
             homeViewStateLiveData.value = HomeViewState.LoadingOff
-
             withContext(threadContextProvider.ui) { handleMovieResult(result) }
         }
+    }
+
+    fun sortShows(shows: List<Show>, sortOption: SortOption) {
+        val sortedShows = homeInteractor.sortBy(shows, sortOption)
+        homeViewStateLiveData.value = HomeViewState.SortedList(sortedShows)
     }
 
     private fun handleMovieResult(result: Result<List<Show>>) = when(result) {

@@ -5,4 +5,5 @@ sealed class HomeViewState {
     object LoadingOff : HomeViewState()
     class SuccessfulListFetching(val shows: List<Show>): HomeViewState()
     class FailedListFetching(val exception: Exception): HomeViewState()
+    class SortedList(val shows: List<Show>): HomeViewState()
 }

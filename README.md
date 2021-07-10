@@ -20,4 +20,41 @@ The Show Hub is a simple Android app developed for a technical interview challen
 
 ## :running: How to run
 
-WIP!
+There's nothing unusual in the project setup when compared to any other simples apps, so you can just click on :arrow_forward: in Android Studio.
+
+## Project Overview
+
+### Design
+
+The layout of the solution was slightly inspired by: https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media
+
+### Tech Stack
+
+Programming Language: Kotlin
+Kotlin 1st Party dependencies:
+- Coroutines
+Android 1st Party dependencies:
+- Jetpack ViewModel
+- Jetpack LiveData
+3rd Party Dependencies:
+- Retrofit
+- Okhttp
+- Glide
+- Koin
+- Gson
+
+### Coding
+
+Architecture Pattern: MVVM (Model-View-ViewModel)
+Design patterns:
+- Repository Pattern
+- Result Pattern
+- Anti Corruption Layer Pattern
+- Adapter
+- Observer
+
+### Testing
+
+Dependencies:
+- Mockk
+- JUnit 5

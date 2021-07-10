@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">The Show Hub</string>
     <string name="go_button_text">Go!</string>
+    <string name="sort_control_label">Sorted By:</string>
+    <string name="best_voted_label">Best Voted</string>
+    <string name="worst_voted_label">Worst Voted</string>
+    <string name="a_to_z_label">A-Z</string>
+    <string name="z_to_a_label">Z-A</string>
 </resources>
