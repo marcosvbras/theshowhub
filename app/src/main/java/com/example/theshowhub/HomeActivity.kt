@@ -22,30 +22,25 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupComponents() {
-        viewModel.getHomeViewStateLiveData()
-            .observe(this, { it?.let { onViewStateUpdated(it) } })
+        viewModel.getHomeViewStateLiveData().observe(this) { it?.let { onViewStateUpdated(it) } }
     }
 
     private fun onViewStateUpdated(homeViewState: HomeViewState) = when(homeViewState) {
         is HomeViewState.LoadingOn -> onLoadingStarted()
         is HomeViewState.LoadingOff -> onLoadingFinished()
-        is HomeViewState.SuccessfulListFetching -> onListFetched(homeViewState.movies)
+        is HomeViewState.SuccessfulListFetching -> onListFetched(homeViewState.shows)
         is HomeViewState.FailedListFetching -> onError(homeViewState.exception)
     }
 
-    private fun onLoadingStarted() {
+    private fun onLoadingStarted() = viewBinding.contentProgressBar.makeItVisible()
 
-    }
+    private fun onLoadingFinished() = viewBinding.contentProgressBar.makeItGone()
 
-    private fun onLoadingFinished() {
-
-    }
-
-    private fun onListFetched(movies: List<Movie>) {
-        val adapter = MovieAdapter()
+    private fun onListFetched(shows: List<Show>) {
+        val adapter = ShowAdapter()
         viewBinding.showsRecycleView.adapter = adapter
         viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
-        adapter.setMovies(movies)
+        adapter.setShows(shows)
     }
 
     private fun onError(exception: Exception) {

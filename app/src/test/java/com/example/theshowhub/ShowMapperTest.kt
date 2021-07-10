@@ -1,6 +1,6 @@
 package com.example.theshowhub
 
-import com.example.theshowhub.MovieMapper.Companion.IMAGE_PATH_DOMAIN
+import com.example.theshowhub.ShowMapper.Companion.IMAGE_PATH_DOMAIN
 import com.example.theshowhub.stubbers.MovieResponseStubber
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -8,9 +8,9 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class MovieMapperTest {
+class ShowMapperTest {
 
-    private val movieMapper = MovieMapper()
+    private val movieMapper = ShowMapper()
 
     @Nested
     @DisplayName("Given A Domain List Mapping")
@@ -42,16 +42,20 @@ class MovieMapperTest {
 
     }
 
-    private fun assertSameValues(movieResponse: MovieResponse, movie: Movie) {
-        assertEquals(movieResponse.id, movie.id)
-        assertEquals(movieResponse.name, movie.name)
-        assertEquals(IMAGE_PATH_DOMAIN + movieResponse.posterPath, movie.posterPath)
+    private fun assertSameValues(showResponse: ShowResponse, show: Show) {
+        assertEquals(showResponse.id, show.id)
+        assertEquals(showResponse.name, show.name)
+        assertEquals(IMAGE_PATH_DOMAIN + showResponse.posterPath, show.posterPath)
+        assertEquals(showResponse.voteAverage, show.voteAverage)
+        assertEquals(showResponse.firstAirDate, show.firstAirDate)
     }
 
-    private fun assertDefaultValues(movie: Movie) {
-        assertEquals(0, movie.id)
-        assertTrue(movie.name.isEmpty())
-        assertTrue(movie.posterPath.isEmpty())
+    private fun assertDefaultValues(show: Show) {
+        assertEquals(0, show.id)
+        assertEquals(0F, show.voteAverage)
+        assertTrue(show.name.isEmpty())
+        assertTrue(show.posterPath.isEmpty())
+        assertTrue(show.firstAirDate.isEmpty())
     }
 
 }

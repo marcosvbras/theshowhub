@@ -6,7 +6,7 @@ object MovieApiResponseStubber {
 
     fun createDummyInstance(): MovieApiResponse = MovieApiResponse(
             page = 1,
-            movieResponses = MovieResponseStubber.createInstanceList(),
+            showResponses = MovieResponseStubber.createInstanceList(),
             lastPage = 10,
             registryCount = 1900
     )

@@ -3,7 +3,7 @@ package com.example.theshowhub
 import com.example.theshowhub.HomeRepository.Companion.API_KEY
 import com.example.theshowhub.HomeRepository.Companion.DEFAULT_LANGUAGE
 import com.example.theshowhub.stubbers.MovieApiResponseStubber
-import com.example.theshowhub.stubbers.MovieStubber
+import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Nested
 
 class HomeRepositoryTest {
 
-    private val homeMapperMock = mockk<MovieMapper>()
+    private val homeMapperMock = mockk<ShowMapper>()
     private val theMovieAPIMock = mockk<TheMovieAPI>()
     private val homeRepository = HomeRepository(homeMapperMock, theMovieAPIMock, TestThreadContextProvider())
 
@@ -27,17 +27,17 @@ class HomeRepositoryTest {
         @Test
         fun `WHEN it the api returns a success response it SHOULD return a movie list`() {
             val movieApiResponse = MovieApiResponseStubber.createDummyInstance()
-            val movies = MovieStubber.createInstanceList()
+            val shows = ShowStubber.createInstanceList()
 
             coEvery {
                 theMovieAPIMock.fetchTopRatedShows(API_KEY, DEFAULT_LANGUAGE, 1)
             } returns movieApiResponse
 
-            every { homeMapperMock.mapToDomainList(movieApiResponse.movieResponses) } returns movies
+            every { homeMapperMock.mapToDomainList(movieApiResponse.showResponses) } returns shows
 
             val output = runBlocking { homeRepository.fetchTopRatedShows() }
 
-            assertEquals(movies, output)
+            assertEquals(shows, output)
         }
 
         @Test

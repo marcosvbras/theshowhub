@@ -1,6 +1,6 @@
 package com.example.theshowhub
 
-import com.example.theshowhub.stubbers.MovieStubber
+import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
@@ -19,14 +19,14 @@ class HomeInteractorTest {
     inner class GivenATopRatedShowRetrieving {
 
         @Test
-        fun `WHEN the repository returns a movie list it SHOULD return a success result`() {
-            val movieListStub = MovieStubber.createInstanceList()
+        fun `WHEN the repository returns a show list it SHOULD return a success result`() {
+            val showListStub = ShowStubber.createInstanceList()
 
-            coEvery { homeRepositoryMock.fetchTopRatedShows() } returns movieListStub
+            coEvery { homeRepositoryMock.fetchTopRatedShows() } returns showListStub
 
             val result = runBlocking { homeInteractor.fetchTopRatedShows() as Result.Success }
 
-            assertEquals(movieListStub, result.data)
+            assertEquals(showListStub, result.data)
         }
 
         @Test

@@ -28,7 +28,7 @@ class HomeViewModel(
         }
     }
 
-    private fun handleMovieResult(result: Result<List<Movie>>) = when(result) {
+    private fun handleMovieResult(result: Result<List<Show>>) = when(result) {
         is Result.Success ->
             homeViewStateLiveData.value = HomeViewState.SuccessfulListFetching(result.data)
         is Result.Error ->

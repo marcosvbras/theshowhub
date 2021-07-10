@@ -2,7 +2,7 @@ package com.example.theshowhub
 
 import androidx.lifecycle.Observer
 import com.example.theshowhub.helpers.LiveDataTest
-import com.example.theshowhub.stubbers.MovieStubber
+import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.slot
@@ -30,7 +30,7 @@ class HomeViewModelTest: LiveDataTest() {
 
         @Test
         fun `WHEN a success result is returned it SHOULD update live data with a complete success view state`() {
-            val movieListStub = MovieStubber.createInstanceList()
+            val movieListStub = ShowStubber.createInstanceList()
             val successResultStub = Result.Success(movieListStub)
             val successfulListFetchingSlot = slot<HomeViewState.SuccessfulListFetching>()
 
@@ -44,7 +44,7 @@ class HomeViewModelTest: LiveDataTest() {
                 homeViewStateObserver.onChanged(capture(successfulListFetchingSlot))
             }
 
-            assertEquals(successfulListFetchingSlot.captured.movies, movieListStub)
+            assertEquals(successfulListFetchingSlot.captured.shows, movieListStub)
         }
 
         @Test

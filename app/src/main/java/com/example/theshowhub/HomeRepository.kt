@@ -3,9 +3,9 @@ package com.example.theshowhub
 import kotlinx.coroutines.withContext
 
 class HomeRepository(
-        private val movieMapper: MovieMapper,
-        private val theMovieAPI: TheMovieAPI,
-        private val threadContextProvider: ThreadContextProvider
+    private val showMapper: ShowMapper,
+    private val theMovieAPI: TheMovieAPI,
+    private val threadContextProvider: ThreadContextProvider
 ) {
 
     companion object {
@@ -13,10 +13,10 @@ class HomeRepository(
         const val DEFAULT_LANGUAGE = "en-US"
     }
 
-    suspend fun fetchTopRatedShows(): List<Movie> = withContext(threadContextProvider.io) {
+    suspend fun fetchTopRatedShows(): List<Show> = withContext(threadContextProvider.io) {
         val movieApiResponse = theMovieAPI.fetchTopRatedShows(API_KEY, DEFAULT_LANGUAGE, page = 1)
 
-        movieMapper.mapToDomainList(movieApiResponse.movieResponses)
+        showMapper.mapToDomainList(movieApiResponse.showResponses)
     }
 
 }
