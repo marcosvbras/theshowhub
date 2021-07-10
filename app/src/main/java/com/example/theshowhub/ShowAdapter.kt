@@ -26,6 +26,8 @@ class ShowAdapter: RecyclerView.Adapter<ShowAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = shows.size
 
+    override fun getItemId(position: Int): Long = shows[position].id.toLong()
+
     inner class ViewHolder(
             private val itemShowBinding: ItemShowBinding
     ): RecyclerView.ViewHolder(itemShowBinding.root) {

@@ -16,8 +16,8 @@ class ShowMapper {
         firstAirDate = showResponse.firstAirDate ?: ""
     )
 
-    fun mapToDomainList(showRespons: List<ShowResponse>): List<Show> {
-        return showRespons.map { mapToDomain(it) }
+    fun mapToDomainList(showResponses: List<ShowResponse>): List<Show> {
+        return showResponses.map { mapToDomain(it) }
     }
 
 }
