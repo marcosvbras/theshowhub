@@ -1,6 +1,9 @@
 package com.example.theshowhub
 
-class ShowMapper {
+import com.example.theshowhub.DateFormatter.Companion.MMM_YYYY
+import com.example.theshowhub.DateFormatter.Companion.YYYY_MM_DD
+
+class ShowMapper(private val dateFormatter: DateFormatter) {
 
     companion object {
         const val IMAGE_PATH_DOMAIN = "https://image.tmdb.org/t/p/w500"
@@ -13,11 +16,13 @@ class ShowMapper {
             IMAGE_PATH_DOMAIN + showResponse.posterPath
         } ?: "",
         voteAverage = showResponse.voteAverage ?: 0F,
-        firstAirDate = showResponse.firstAirDate ?: ""
+        airDate = showResponse.airDate ?: "",
+        formattedAirDate = dateFormatter.format(
+            originalDate = showResponse.airDate ?: "", inputFormat = YYYY_MM_DD, outputFormat = MMM_YYYY
+        )
     )
 
-    fun mapToDomainList(showResponses: List<ShowResponse>): List<Show> {
-        return showResponses.map { mapToDomain(it) }
-    }
+    fun mapToDomainList(showResponses: List<ShowResponse>): List<Show> =
+        showResponses.map { mapToDomain(it) }
 
 }

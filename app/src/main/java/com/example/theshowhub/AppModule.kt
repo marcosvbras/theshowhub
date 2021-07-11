@@ -11,5 +11,6 @@ val appModule = module {
     factory { HomeRepository(get(), get(), get()) }
     factory { GsonConverterFactory.create() }
     factory { TheMovieAPIProvider.providesApi(get()) }
-    factory { ShowMapper() }
+    factory { ShowMapper(get()) }
+    factory { DateFormatter() }
 }

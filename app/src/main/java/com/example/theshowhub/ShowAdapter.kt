@@ -39,7 +39,7 @@ class ShowAdapter: RecyclerView.Adapter<ShowAdapter.ViewHolder>() {
                 .load(show.posterPath)
                 .into(itemShowBinding.posterImageView)
 
-            itemShowBinding.airDateTextView.text = show.firstAirDate
+            itemShowBinding.airDateTextView.text = show.formattedAirDate
             itemShowBinding.voteTextView.text = show.voteAverage.toString()
         }
 

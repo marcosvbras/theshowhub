@@ -58,6 +58,7 @@ class HomeActivity : AppCompatActivity() {
     private fun onLoadingFinished() = viewBinding.contentProgressBar.makeItGone()
 
     private fun onListFetched(shows: List<Show>) {
+        viewBinding.containerError.makeItGone()
         this.shows = shows
         viewBinding.showsRecycleView.adapter = showAdapter
         viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
@@ -66,7 +67,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun onError(exception: Exception) {
-        Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
+        viewBinding.errorTextView.text = if (exception is ConnectionException)
+            getString(R.string.connection_error_text)
+        else
+            getString(R.string.general_error_text)
+
+        viewBinding.containerError.makeItVisible()
     }
 
     private fun createSelectionListener(): AdapterView.OnItemSelectedListener = object : AdapterView.OnItemSelectedListener {

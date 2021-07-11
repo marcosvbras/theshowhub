@@ -47,11 +47,11 @@ Android 1st Party dependencies:
 
 Architecture Pattern: MVVM (Model-View-ViewModel)
 Design patterns:
+- Adapter
+- Anti Corruption Layer Pattern
+- Observer Pattern
 - Repository Pattern
 - Result Pattern
-- Anti Corruption Layer Pattern
-- Adapter
-- Observer
 
 ### Testing
 

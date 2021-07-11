@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">The Show Hub</string>
     <string name="go_button_text">Go!</string>
+    <string name="general_error_text">Oops, something happened. Try Again Later</string>
+    <string name="connection_error_text">Check your internet connection and try again</string>
     <string name="sort_control_label">Sorted By:</string>
     <string name="best_voted_label">Best Voted</string>
     <string name="worst_voted_label">Worst Voted</string>
-    <string name="a_to_z_label">A-Z</string>
-    <string name="z_to_a_label">Z-A</string>
+    <string name="a_to_z_label">Title (A-Z)</string>
+    <string name="z_to_a_label">Title (Z-A)</string>
+    <string name="air_date_newest_label">Air Date (newest - oldest)</string>
+    <string name="air_date_oldest_label">Air Date (oldest - newest)</string>
 </resources>

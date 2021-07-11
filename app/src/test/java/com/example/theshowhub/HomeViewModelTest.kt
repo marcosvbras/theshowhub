@@ -3,10 +3,7 @@ package com.example.theshowhub
 import androidx.lifecycle.Observer
 import com.example.theshowhub.helpers.LiveDataTest
 import com.example.theshowhub.stubbers.ShowStubber
-import io.mockk.coEvery
-import io.mockk.mockk
-import io.mockk.slot
-import io.mockk.verifySequence
+import io.mockk.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -64,6 +61,29 @@ class HomeViewModelTest: LiveDataTest() {
             }
 
             assertEquals(failedListFetchingSlot.captured.exception, exceptionStub)
+        }
+
+    }
+
+    @Nested
+    @DisplayName("Given A Show List Sorting")
+    inner class GivenAShowListSorting {
+
+        @Test
+        fun `SHOULD update live data with sorted shows`() {
+            val showListStub = ShowStubber.createInstanceList()
+            val sortOptionStub = SortOption.WorstVoted
+            val sortedListSlot = slot<HomeViewState.SortedList>()
+
+            every { homeInteractorMock.sortBy(showListStub, sortOptionStub) } returns showListStub
+
+            homeViewModel.sortShows(showListStub, sortOptionStub)
+
+            verify {
+                homeViewStateObserver.onChanged(capture(sortedListSlot))
+            }
+
+            assertEquals(showListStub, sortedListSlot.captured.shows)
         }
 
     }

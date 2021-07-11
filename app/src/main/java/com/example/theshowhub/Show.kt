@@ -5,5 +5,6 @@ data class Show(
         val name: String,
         val posterPath: String,
         val voteAverage: Float,
-        val firstAirDate: String
+        val airDate: String,
+        val formattedAirDate: String
 )

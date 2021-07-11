@@ -12,14 +12,24 @@ object ShowStubber {
                     Show(
                         id = index,
                         name = "Stubbed Name $index",
-                        posterPath = "https://poster.path.com/$index",
+                        posterPath = "https://poster.path.com/$index.jpg",
                         voteAverage = index.toFloat(),
-                        firstAirDate = "2020-01-$index"
+                        airDate = "2020-01-$index",
+                        formattedAirDate = "July 2019"
                     )
             )
         }
 
         return shows
     }
+
+    fun createDummyInstance(): Show = Show(
+        id = 12345,
+        name = "Stubbed Name",
+        posterPath = "https://poster.path.com/12345566.jpg",
+        voteAverage = 9F,
+        airDate = "2020-01-04",
+        formattedAirDate = "July 2019"
+    )
 
 }

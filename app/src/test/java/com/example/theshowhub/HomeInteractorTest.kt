@@ -42,4 +42,90 @@ class HomeInteractorTest {
 
     }
 
+    @Nested
+    @DisplayName("Given A Show List Sorting")
+    inner class GivenAShowListSorting {
+
+        @Test
+        fun `WHEN it passed best voted option it SHOULD return a descending list sorted by votes`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(voteAverage = 6F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 7.5F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 9F)
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(voteAverage = 9F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 7.5F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 6F)
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.BestVoted)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
+        @Test
+        fun `WHEN it passed worst voted option it SHOULD return an ascending list sorted by votes`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(voteAverage = 10F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 6F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 7F)
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(voteAverage = 6F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 7F),
+                ShowStubber.createDummyInstance().copy(voteAverage = 10F)
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.WorstVoted)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
+        @Test
+        fun `WHEN it passed title az option it SHOULD return an ascending list sorted by name`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(name = "EEE"),
+                ShowStubber.createDummyInstance().copy(name = "AAA"),
+                ShowStubber.createDummyInstance().copy(name = "BBB")
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(name = "AAA"),
+                ShowStubber.createDummyInstance().copy(name = "BBB"),
+                ShowStubber.createDummyInstance().copy(name = "EEE")
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.TitleAZ)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
+        @Test
+        fun `WHEN it passed title za option it SHOULD return a descending list sorted by name`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(name = "CCC"),
+                ShowStubber.createDummyInstance().copy(name = "LLL"),
+                ShowStubber.createDummyInstance().copy(name = "LLL")
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(name = "LLL"),
+                ShowStubber.createDummyInstance().copy(name = "LLL"),
+                ShowStubber.createDummyInstance().copy(name = "CCC")
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.TitleZA)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
+    }
+
 }

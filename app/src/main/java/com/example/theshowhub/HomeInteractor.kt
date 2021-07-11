@@ -11,8 +11,10 @@ class HomeInteractor(private val homeRepository: HomeRepository) {
     fun sortBy(shows: List<Show>, sortOption: SortOption): List<Show> = when(sortOption) {
         SortOption.BestVoted -> shows.sortedByDescending { it.voteAverage }
         SortOption.WorstVoted -> shows.sortedBy { it.voteAverage }
-        SortOption.AZ -> shows.sortedBy { it.name }
-        SortOption.ZA -> shows.sortedByDescending { it.name }
+        SortOption.TitleAZ -> shows.sortedBy { it.name }
+        SortOption.TitleZA -> shows.sortedByDescending { it.name }
+        SortOption.AirDateNewest -> shows.sortedByDescending { it.airDate }
+        SortOption.AirDateOldest -> shows.sortedBy { it.airDate }
     }
 
 }

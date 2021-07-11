@@ -7,5 +7,5 @@ data class ShowResponse(
         @SerializedName("name") val name: String?,
         @SerializedName("poster_path") val posterPath: String?,
         @SerializedName("vote_average") val voteAverage: Float?,
-        @SerializedName("first_air_date") val firstAirDate: String?
+        @SerializedName("first_air_date") val airDate: String?
 )

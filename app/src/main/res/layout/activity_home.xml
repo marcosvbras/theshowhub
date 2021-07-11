@@ -11,33 +11,32 @@
         android:id="@+id/sortedByTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
         android:text="@string/sort_control_label"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/sortSpinner"
-        app:layout_constraintEnd_toStartOf="@+id/sortSpinner"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sortSpinner" />
+        app:layout_constraintTop_toTopOf="@+id/sortSpinner"
+        tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/sortSpinner"
-        android:layout_width="150dp"
+        android:layout_width="180dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_shape"
         android:clipChildren="true"
         android:clipToPadding="true"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sortedByTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/showsRecycleView"
@@ -61,5 +60,40 @@
         app:layout_constraintEnd_toEndOf="@+id/showsRecycleView"
         app:layout_constraintStart_toStartOf="@+id/showsRecycleView"
         app:layout_constraintTop_toTopOf="@+id/showsRecycleView" />
+
+    <LinearLayout
+        android:id="@+id/containerError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/showsRecycleView"
+        app:layout_constraintTop_toTopOf="@+id/showsRecycleView"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/errorImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_error"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/showsRecycleView"
+            app:layout_constraintEnd_toEndOf="@+id/showsRecycleView"
+            app:layout_constraintStart_toStartOf="@+id/showsRecycleView"
+            app:layout_constraintTop_toTopOf="@+id/showsRecycleView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/errorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            tools:text="@string/general_error_text" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ object MovieResponseStubber {
                         name = "Stubbed Name $index",
                         posterPath = "/$index.jpg",
                         voteAverage = index.toFloat(),
-                        firstAirDate = "2004-05-10"
+                        airDate = "2004-05-10"
                     )
             )
         }
@@ -32,7 +32,7 @@ object MovieResponseStubber {
                         name = null,
                         posterPath = null,
                         voteAverage = null,
-                        firstAirDate = null
+                        airDate = null
                     )
             )
         }
