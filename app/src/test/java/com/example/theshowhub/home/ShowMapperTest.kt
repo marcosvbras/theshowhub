@@ -1,9 +1,13 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
+import com.example.theshowhub.DateFormatter
 import com.example.theshowhub.DateFormatter.Companion.MMM_YYYY
 import com.example.theshowhub.DateFormatter.Companion.YYYY_MM_DD
+import com.example.theshowhub.Show
+import com.example.theshowhub.ShowMapper
 import com.example.theshowhub.ShowMapper.Companion.IMAGE_PATH_DOMAIN
-import com.example.theshowhub.stubbers.MovieResponseStubber
+import com.example.theshowhub.ShowResponse
+import com.example.theshowhub.stubbers.ShowResponseStubber
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -24,7 +28,7 @@ class ShowMapperTest {
 
         @Test
         fun `WHEN the movie responses have valid values it SHOULD return an equivalent movie list`() {
-            val movieResponseListStub = MovieResponseStubber.createInstanceList()
+            val movieResponseListStub = ShowResponseStubber.createInstanceList()
 
             movieResponseListStub.forEach { movieResponse ->
                 every {
@@ -42,7 +46,7 @@ class ShowMapperTest {
 
         @Test
         fun `WHEN the movie responses have null values it SHOULD return a movie list with default values`() {
-            val movieResponseListStub = MovieResponseStubber.createInstanceListWithNullValues()
+            val movieResponseListStub = ShowResponseStubber.createInstanceListWithNullValues()
 
             movieResponseListStub.forEach { movieResponse ->
                 every {

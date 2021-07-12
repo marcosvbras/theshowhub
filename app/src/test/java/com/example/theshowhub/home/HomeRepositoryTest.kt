@@ -1,7 +1,11 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
+import com.example.theshowhub.HomeRepository
 import com.example.theshowhub.HomeRepository.Companion.API_KEY
 import com.example.theshowhub.HomeRepository.Companion.DEFAULT_LANGUAGE
+import com.example.theshowhub.ShowMapper
+import com.example.theshowhub.helpers.TestThreadContextProvider
+import com.example.theshowhub.TheMovieAPI
 import com.example.theshowhub.stubbers.MovieApiResponseStubber
 import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery

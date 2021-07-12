@@ -1,5 +1,9 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
+import com.example.theshowhub.HomeInteractor
+import com.example.theshowhub.HomeRepository
+import com.example.theshowhub.Result
+import com.example.theshowhub.SortOption
 import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.mockk

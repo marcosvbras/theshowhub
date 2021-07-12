@@ -37,6 +37,8 @@ class ShowAdapter: RecyclerView.Adapter<ShowAdapter.ViewHolder>() {
 
             Glide.with(itemShowBinding.root.context)
                 .load(show.posterPath)
+                .placeholder(R.drawable.ic_poster_placeholder)
+                .centerCrop()
                 .into(itemShowBinding.posterImageView)
 
             itemShowBinding.airDateTextView.text = show.formattedAirDate

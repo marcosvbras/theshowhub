@@ -64,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
         showAdapter.setShows(shows)
         setupSortSpinner()
+        viewBinding.showsRecycleView.makeItVisible()
     }
 
     private fun onError(exception: Exception) {

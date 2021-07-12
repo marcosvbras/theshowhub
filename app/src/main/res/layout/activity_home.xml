@@ -43,6 +43,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,15 +67,13 @@
         android:id="@+id/containerError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/showsRecycleView"
-        app:layout_constraintTop_toTopOf="@+id/showsRecycleView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -89,7 +89,8 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/errorTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:layout_marginTop="16dp"

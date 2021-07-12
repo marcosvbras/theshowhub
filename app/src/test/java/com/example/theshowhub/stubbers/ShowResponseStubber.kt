@@ -2,7 +2,7 @@ package com.example.theshowhub.stubbers
 
 import com.example.theshowhub.ShowResponse
 
-object MovieResponseStubber {
+object ShowResponseStubber {
 
     fun createInstanceList(quantity: Int = 5): List<ShowResponse> {
         val movieResponses = mutableListOf<ShowResponse>()

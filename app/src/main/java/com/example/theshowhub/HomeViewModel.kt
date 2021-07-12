@@ -22,7 +22,7 @@ class HomeViewModel(
         viewModelScope.launch {
             val result = homeInteractor.fetchTopRatedShows()
             homeViewStateLiveData.value = HomeViewState.LoadingOff
-            withContext(threadContextProvider.ui) { handleMovieResult(result) }
+            withContext(threadContextProvider.ui) { handleShowResult(result) }
         }
     }
 
@@ -31,7 +31,7 @@ class HomeViewModel(
         homeViewStateLiveData.value = HomeViewState.SortedList(sortedShows)
     }
 
-    private fun handleMovieResult(result: Result<List<Show>>) = when(result) {
+    private fun handleShowResult(result: Result<List<Show>>) = when(result) {
         is Result.Success ->
             homeViewStateLiveData.value = HomeViewState.SuccessfulListFetching(result.data)
         is Result.Error ->

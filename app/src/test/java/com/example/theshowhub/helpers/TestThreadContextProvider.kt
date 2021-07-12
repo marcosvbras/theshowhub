@@ -1,5 +1,6 @@
-package com.example.theshowhub
+package com.example.theshowhub.helpers
 
+import com.example.theshowhub.ThreadContextProvider
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext
 
