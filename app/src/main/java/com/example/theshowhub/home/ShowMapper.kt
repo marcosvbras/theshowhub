@@ -1,7 +1,10 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
-import com.example.theshowhub.DateFormatter.Companion.MMM_YYYY
-import com.example.theshowhub.DateFormatter.Companion.YYYY_MM_DD
+import com.example.theshowhub.api.Show
+import com.example.theshowhub.api.ShowResponse
+import com.example.theshowhub.utils.DateFormatter
+import com.example.theshowhub.utils.DateFormatter.Companion.MMM_YYYY
+import com.example.theshowhub.utils.DateFormatter.Companion.YYYY_MM_DD
 
 class ShowMapper(private val dateFormatter: DateFormatter) {
 

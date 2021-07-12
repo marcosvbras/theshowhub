@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.utils
 
 sealed class Result<out T> {
     class Success<out T>(val data: T) : Result<T>()

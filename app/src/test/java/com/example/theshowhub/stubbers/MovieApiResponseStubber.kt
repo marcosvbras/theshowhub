@@ -1,6 +1,6 @@
 package com.example.theshowhub.stubbers
 
-import com.example.theshowhub.MovieApiResponse
+import com.example.theshowhub.api.MovieApiResponse
 
 object MovieApiResponseStubber {
 

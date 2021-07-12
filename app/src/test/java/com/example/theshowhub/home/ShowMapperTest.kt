@@ -1,12 +1,11 @@
 package com.example.theshowhub.home
 
-import com.example.theshowhub.DateFormatter
-import com.example.theshowhub.DateFormatter.Companion.MMM_YYYY
-import com.example.theshowhub.DateFormatter.Companion.YYYY_MM_DD
-import com.example.theshowhub.Show
-import com.example.theshowhub.ShowMapper
-import com.example.theshowhub.ShowMapper.Companion.IMAGE_PATH_DOMAIN
-import com.example.theshowhub.ShowResponse
+import com.example.theshowhub.utils.DateFormatter
+import com.example.theshowhub.utils.DateFormatter.Companion.MMM_YYYY
+import com.example.theshowhub.utils.DateFormatter.Companion.YYYY_MM_DD
+import com.example.theshowhub.api.Show
+import com.example.theshowhub.home.ShowMapper.Companion.IMAGE_PATH_DOMAIN
+import com.example.theshowhub.api.ShowResponse
 import com.example.theshowhub.stubbers.ShowResponseStubber
 import io.mockk.every
 import io.mockk.mockk

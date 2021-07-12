@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.api
 
 import com.google.gson.annotations.SerializedName
 

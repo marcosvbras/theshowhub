@@ -1,4 +1,7 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
+
+import com.example.theshowhub.api.Show
+import com.example.theshowhub.api.TheMovieAPI
 
 class HomeRepository(private val showMapper: ShowMapper, private val theMovieAPI: TheMovieAPI) {
 

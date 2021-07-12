@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
 import android.app.Activity
 import android.view.LayoutInflater

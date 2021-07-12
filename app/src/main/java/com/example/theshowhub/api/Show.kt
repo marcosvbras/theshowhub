@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.api
 
 data class Show(
         val id: Int,

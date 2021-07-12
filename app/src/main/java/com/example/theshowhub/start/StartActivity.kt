@@ -1,8 +1,9 @@
-package com.example.theshowhub
+package com.example.theshowhub.start
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.theshowhub.home.HomeActivity
 import com.example.theshowhub.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {

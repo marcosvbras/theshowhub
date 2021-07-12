@@ -1,6 +1,6 @@
 package com.example.theshowhub.home
 
-import com.example.theshowhub.appModule
+import com.example.theshowhub.di.appModule
 import io.mockk.mockk
 import org.junit.jupiter.api.Test
 import org.koin.android.ext.koin.androidContext

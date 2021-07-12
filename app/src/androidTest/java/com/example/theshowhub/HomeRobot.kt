@@ -4,6 +4,12 @@ import android.content.Intent
 import androidx.lifecycle.MutableLiveData
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
+import com.example.theshowhub.api.Show
+import com.example.theshowhub.utils.ConnectionException
+import com.example.theshowhub.home.HomeActivity
+import com.example.theshowhub.home.HomeViewModel
+import com.example.theshowhub.home.HomeViewState
+import com.example.theshowhub.home.SortOption
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

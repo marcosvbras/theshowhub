@@ -1,4 +1,6 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
+
+import com.example.theshowhub.api.Show
 
 sealed class HomeViewState {
     object LoadingOn: HomeViewState()

@@ -1,6 +1,6 @@
 package com.example.theshowhub.stubbers
 
-import com.example.theshowhub.Show
+import com.example.theshowhub.api.Show
 
 object ShowStubber {
 

@@ -1,5 +1,8 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
+import com.example.theshowhub.utils.Result
+import com.example.theshowhub.api.Show
+import com.example.theshowhub.utils.ThreadContextProvider
 import kotlinx.coroutines.withContext
 
 class HomeInteractor(

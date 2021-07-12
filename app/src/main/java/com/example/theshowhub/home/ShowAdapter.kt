@@ -1,9 +1,11 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.theshowhub.R
+import com.example.theshowhub.api.Show
 import com.example.theshowhub.databinding.ItemShowBinding
 
 class ShowAdapter: RecyclerView.Adapter<ShowAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.utils
 
 import android.util.Log
 import java.text.SimpleDateFormat

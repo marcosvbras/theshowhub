@@ -1,11 +1,7 @@
 package com.example.theshowhub.home
 
 import androidx.lifecycle.Observer
-import com.example.theshowhub.HomeInteractor
-import com.example.theshowhub.HomeViewModel
-import com.example.theshowhub.HomeViewState
-import com.example.theshowhub.Result
-import com.example.theshowhub.SortOption
+import com.example.theshowhub.utils.Result
 import com.example.theshowhub.helpers.LiveDataTest
 import com.example.theshowhub.helpers.TestThreadContextProvider
 import com.example.theshowhub.stubbers.ShowStubber

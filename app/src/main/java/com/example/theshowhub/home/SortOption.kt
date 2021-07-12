@@ -1,4 +1,6 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
+
+import com.example.theshowhub.R
 
 enum class SortOption(val label: Int) {
     BestVoted(R.string.best_voted_label),

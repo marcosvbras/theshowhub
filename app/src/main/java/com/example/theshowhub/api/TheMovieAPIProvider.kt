@@ -1,5 +1,6 @@
-package com.example.theshowhub
+package com.example.theshowhub.api
 
+import com.example.theshowhub.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

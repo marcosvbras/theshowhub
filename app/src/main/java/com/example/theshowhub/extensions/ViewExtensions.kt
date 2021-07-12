@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.extensions
 
 import android.view.View
 

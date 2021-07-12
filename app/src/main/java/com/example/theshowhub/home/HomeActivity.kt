@@ -1,11 +1,16 @@
-package com.example.theshowhub
+package com.example.theshowhub.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.theshowhub.utils.ConnectionException
+import com.example.theshowhub.R
+import com.example.theshowhub.api.Show
 import com.example.theshowhub.databinding.ActivityHomeBinding
+import com.example.theshowhub.extensions.makeItGone
+import com.example.theshowhub.extensions.makeItVisible
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
