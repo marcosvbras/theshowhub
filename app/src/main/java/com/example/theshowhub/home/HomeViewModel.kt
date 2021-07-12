@@ -30,9 +30,12 @@ class HomeViewModel(
     }
 
     fun sortShows(shows: List<Show>, sortOption: SortOption) {
+        homeViewStateLiveData.value = HomeViewState.LoadingOn
+
         viewModelScope.launch {
             withContext(threadContextProvider.ui) {
                 val sortedShows = homeInteractor.sortBy(shows, sortOption)
+                homeViewStateLiveData.value = HomeViewState.LoadingOff
                 homeViewStateLiveData.value = HomeViewState.SortedList(sortedShows)
             }
         }

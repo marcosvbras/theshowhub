@@ -8,7 +8,6 @@ import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.slot
-import io.mockk.verify
 import io.mockk.verifySequence
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -85,7 +84,9 @@ class HomeViewModelTest: LiveDataTest() {
 
             homeViewModel.sortShows(showListStub, sortOptionStub)
 
-            verify {
+            verifySequence {
+                homeViewStateObserver.onChanged(capture(loadingOnSlot))
+                homeViewStateObserver.onChanged(capture(loadingOffSlot))
                 homeViewStateObserver.onChanged(capture(sortedListSlot))
             }
 
