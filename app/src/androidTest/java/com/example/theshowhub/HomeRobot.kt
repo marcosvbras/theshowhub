@@ -104,10 +104,6 @@ class HomeRobot {
 
     inner class HomeRobotCheck: BaseRobotCheck() {
 
-        fun sleep() {
-            Thread.sleep(10000)
-        }
-
         fun checkVisibleLoading() = checkVisible(R.id.contentProgressBar)
 
         fun checkInvisibleLoading() = checkViewGone(R.id.contentProgressBar)

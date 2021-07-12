@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theshowhub.databinding.ActivityHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -76,13 +75,16 @@ class HomeActivity : AppCompatActivity() {
         viewBinding.containerError.makeItVisible()
     }
 
-    private fun createSelectionListener(): AdapterView.OnItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            val sortOption = parent?.getItemAtPosition(position) as SortOption
-            viewModel.sortShows(shows, sortOption)
-        }
+    private fun createSelectionListener(): AdapterView.OnItemSelectedListener =
+        object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long
+            ) {
+                val sortOption = parent?.getItemAtPosition(position) as SortOption
+                viewModel.sortShows(shows, sortOption)
+            }
 
-        override fun onNothingSelected(parent: AdapterView<*>?) = Unit
-    }
+            override fun onNothingSelected(parent: AdapterView<*>?) = Unit
+        }
 
 }

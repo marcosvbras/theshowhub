@@ -10,7 +10,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 open class BaseRobotAction {
 
     fun clickOnComponent(@IdRes resourceId: Int) {
-        onView((withId(resourceId))).perform(click())
+        onView(withId(resourceId)).perform(click())
     }
 
     fun clickOnText(@StringRes text: Int) {

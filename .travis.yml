@@ -37,6 +37,7 @@ before_script:
 
 script:
   - ./gradlew clean build
+  - ./gradlew detektIssues
   - ./gradlew testDebugUnitTest
   - ./gradlew assembleDebugAndroidTest
   - ./gradlew build check
