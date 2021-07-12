@@ -1,3 +1,4 @@
+
 # The Show Hub
 Travis CI Status:
 [![Build Status](https://travis-ci.com/marcosvbras/theshowhub.svg?branch=master)](https://travis-ci.com/marcosvbras/theshowhub)
@@ -25,7 +26,7 @@ There's nothing unusual in the project setup when compared to any other simples 
 
 ### Design
 
-The layout of the solution was slightly inspired by [this amazing dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media) by Malik Abimany. Unfortunately, I wasn't able to reproduce it entirely due to API info limitations.
+The layout of the solution was slightly inspired by [Malik Abimany's dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media). Unfortunately, I wasn't able to reproduce it entirely due to API data limitations.
 
 <p  align="center">
 <img  src="repoImages/startScreen.png"  alt="Start Screen"/>
@@ -38,48 +39,61 @@ The layout of the solution was slightly inspired by [this amazing dribbble conce
 - Kotlin
 
 **Kotlin 1st Party dependencies**:
-- Coroutines
+- [Coroutines](https://developer.android.com/kotlin/coroutines)
 
 **Android 1st Party dependencies**:
-- Jetpack ViewModel
-- Jetpack LiveData
+- [Jetpack ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- [Jetpack LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 
 **3rd Party Dependencies**:
-- Retrofit
-- Okhttp
-- Glide
-- Koin
+- [Retrofit](https://github.com/square/retrofit)
+- [Okhttp](https://square.github.io/okhttp/)
+- [Glide](https://bumptech.github.io/glide/)
+- [Koin](https://insert-koin.io/)
 
 **Test Dependencies**:
-- Mockk
-- JUnit 5
-- Espresso
+- [Mockk](https://mockk.io/)
+- [JUnit 5](https://junit.org/junit5/)
+- [Espresso](https://developer.android.com/training/testing/espresso)
 
 ### Coding
 
 **Architectural Pattern**: 
-- MVVM (Model-View-ViewModel)
+- [MVVM (Model-View-ViewModel)](https://developer.android.com/jetpack/guide)
 
 **Approaches**:
-- SOLID
-- Clean Code by Uncle Bob
-- Clean Architecture by Uncle Bob
+- [SOLID](https://en.wikipedia.org/wiki/SOLID)
+- [Clean Code by Uncle Bob](https://www.cleancoders.com/)
+- [Clean Architecture by Uncle Bob](https://www.cleancoders.com/)
 
 **Design patterns**:
-- Adapter
-- Anti Corruption Layer Pattern
-- Observer Pattern
-- Repository Pattern
-- Result Pattern
+- [Adapter](https://refactoring.guru/design-patterns/adapter)
+- [Anti Corruption Layer Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)
+- [Observer Pattern](https://refactoring.guru/design-patterns/observer)
+- [Repository Pattern](https://martinfowler.com/eaaCatalog/repository.html)
+- [Result Pattern](https://medium.com/@cummingsi1993/the-operation-result-pattern-a-simple-guide-fe10ff959080)
 
 **Test patterns**:
-- Robot Pattern
+- [Robot Pattern/Page Object Pattern](https://martinfowler.com/bliki/PageObject.html)
 
 ## Quality Assurance Overview :mag:
 
-This project counts with two automated tests layers: ***Unit Test*** and ***Instrumentation Test***.
+This project counts with two automated tests layers: ***Unit Test*** and ***Instrumentation Test***. They are covering all behaviors of the solution.
 
-Also, all tests are passing in a ***Travis CI*** pipeline.
+### Continuous Integration
+
+This repository is linked to a ***[Travis CI](https://travis-ci.com/)*** pipeline:
+
+<p  align="center">
+<img  src="repoImages/travis.png"  alt="Travis CI"/>
+</p>
+
+**Pipeline steps**:
+1. Build
+2. Android Lint
+3. [Detekt](https://detekt.github.io/detekt/) Lint
+4. Unit Tests
+5. Instrumented Tests 
 
 ### Android Lint Report
 
@@ -90,7 +104,7 @@ There's no android lint issues for this project!
 
 ### Detekt Report
 
-There's no detekt issues either :)
+There's no [detekt](https://detekt.github.io/detekt/) issues either :)
 <p  align="center">
 <img  src="repoImages/detekt.png"  alt="Detekt Report"/>
 </p>
