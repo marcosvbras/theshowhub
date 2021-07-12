@@ -57,6 +57,11 @@ android {
         }
     }
 
+    lintOptions {
+        xmlReport false
+        abortOnError true
+    }
+
 }
 
 dependencies {

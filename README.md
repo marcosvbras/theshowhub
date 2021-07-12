@@ -16,7 +16,7 @@ The Show Hub is a simple Android app developed for a technical interview challen
 - Bonus points will be given to any extra features implemented
 
 <p  align="center">
-<img  src="challenge.gif"  alt="Challenge accepted gif"/>
+<img  src="repoImages/challenge.gif"  alt="Challenge accepted gif"/>
 </p>
 
 ## :running: How to run
@@ -71,8 +71,15 @@ The layout of the solution was slightly inspired by [this amazing dribbble conce
 **Test patterns**:
 - Robot Pattern
 
-### Quality Assurance Overview
+## Quality Assurance Overview
 
 This project counts with two automated tests layers: ***Unit Test*** and ***Instrumentation Test***.
 
 Also, all tests are passing in a ***Travis CI*** pipeline.
+
+### Lint Report
+
+There's no lint issues for this project :)
+<p  align="center">
+<img  src="repoImages/lint.png"  alt="Challenge accepted gif"/>
+</p>
