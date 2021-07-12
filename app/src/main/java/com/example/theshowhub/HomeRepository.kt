@@ -1,17 +1,11 @@
 package com.example.theshowhub
 
-import kotlinx.coroutines.withContext
+class HomeRepository(private val showMapper: ShowMapper, private val theMovieAPI: TheMovieAPI) {
 
-class HomeRepository(
-    private val showMapper: ShowMapper,
-    private val theMovieAPI: TheMovieAPI,
-    private val threadContextProvider: ThreadContextProvider
-) {
-
-    suspend fun fetchTopRatedShows(): List<Show> = withContext(threadContextProvider.io) {
+    suspend fun fetchTopRatedShows(): List<Show> {
         val movieApiResponse = theMovieAPI.fetchTopRatedShows(API_KEY, DEFAULT_LANGUAGE, page = 1)
 
-        showMapper.mapToDomainList(movieApiResponse.showResponses)
+        return showMapper.mapToDomainList(movieApiResponse.showResponses)
     }
 
     companion object {

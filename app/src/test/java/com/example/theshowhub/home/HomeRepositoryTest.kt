@@ -4,7 +4,6 @@ import com.example.theshowhub.HomeRepository
 import com.example.theshowhub.HomeRepository.Companion.API_KEY
 import com.example.theshowhub.HomeRepository.Companion.DEFAULT_LANGUAGE
 import com.example.theshowhub.ShowMapper
-import com.example.theshowhub.helpers.TestThreadContextProvider
 import com.example.theshowhub.TheMovieAPI
 import com.example.theshowhub.stubbers.MovieApiResponseStubber
 import com.example.theshowhub.stubbers.ShowStubber
@@ -22,7 +21,7 @@ class HomeRepositoryTest {
 
     private val homeMapperMock = mockk<ShowMapper>()
     private val theMovieAPIMock = mockk<TheMovieAPI>()
-    private val homeRepository = HomeRepository(homeMapperMock, theMovieAPIMock, TestThreadContextProvider())
+    private val homeRepository = HomeRepository(homeMapperMock, theMovieAPIMock)
 
     @Nested
     @DisplayName("Given A Top Rated Show Retrieving")

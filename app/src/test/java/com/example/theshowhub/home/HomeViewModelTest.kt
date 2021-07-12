@@ -9,7 +9,6 @@ import com.example.theshowhub.SortOption
 import com.example.theshowhub.helpers.LiveDataTest
 import com.example.theshowhub.helpers.TestThreadContextProvider
 import com.example.theshowhub.stubbers.ShowStubber
-import io.mockk.every
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.slot
@@ -86,7 +85,7 @@ class HomeViewModelTest: LiveDataTest() {
             val sortOptionStub = SortOption.WorstVoted
             val sortedListSlot = slot<HomeViewState.SortedList>()
 
-            every { homeInteractorMock.sortBy(showListStub, sortOptionStub) } returns showListStub
+            coEvery { homeInteractorMock.sortBy(showListStub, sortOptionStub) } returns showListStub
 
             homeViewModel.sortShows(showListStub, sortOptionStub)
 

@@ -11,7 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers.Visibility
 
 open class BaseRobotCheck {
 
-    fun checkVisible(@IdRes viewId: Int) {
+    fun checkViewVisible(@IdRes viewId: Int) {
         onView(withId(viewId)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
     }
 
@@ -19,7 +19,7 @@ open class BaseRobotCheck {
         onView(withId(viewId)).check(matches(withEffectiveVisibility(Visibility.GONE)))
     }
 
-    fun checkText(@IdRes viewId: Int, @StringRes textResourceId: Int) {
+    fun checkTextExistence(@IdRes viewId: Int, @StringRes textResourceId: Int) {
         onView(withId(viewId)).check(matches(withText(textResourceId)))
     }
 

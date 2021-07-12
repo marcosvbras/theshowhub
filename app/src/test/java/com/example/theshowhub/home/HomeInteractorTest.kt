@@ -4,6 +4,7 @@ import com.example.theshowhub.HomeInteractor
 import com.example.theshowhub.HomeRepository
 import com.example.theshowhub.Result
 import com.example.theshowhub.SortOption
+import com.example.theshowhub.helpers.TestThreadContextProvider
 import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -16,7 +17,7 @@ import org.junit.jupiter.api.Test
 class HomeInteractorTest {
 
     private val homeRepositoryMock = mockk<HomeRepository>()
-    private val homeInteractor = HomeInteractor(homeRepositoryMock)
+    private val homeInteractor = HomeInteractor(homeRepositoryMock, TestThreadContextProvider())
 
     @Nested
     @DisplayName("Given A Top Rated Show Retrieving")
@@ -64,7 +65,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(voteAverage = 6F)
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.BestVoted)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.BestVoted)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)
@@ -84,7 +87,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(voteAverage = 10F)
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.WorstVoted)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.WorstVoted)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)
@@ -104,7 +109,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(name = "EEE")
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.TitleAZ)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.TitleAZ)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)
@@ -124,7 +131,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(name = "CCC")
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.TitleZA)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.TitleZA)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)
@@ -144,7 +153,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(airDate = "2019-08-12")
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.AirDateNewest)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.AirDateNewest)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)
@@ -164,7 +175,9 @@ class HomeInteractorTest {
                 ShowStubber.createDummyInstance().copy(airDate = "2020-11-07")
             )
 
-            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.AirDateOldest)
+            val outputShowList = runBlocking {
+                homeInteractor.sortBy(inputShowList, SortOption.AirDateOldest)
+            }
 
             assertEquals(inputShowList.size, outputShowList.size)
             assertEquals(expectedShowList, outputShowList)

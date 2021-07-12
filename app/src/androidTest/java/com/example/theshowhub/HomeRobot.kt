@@ -104,13 +104,13 @@ class HomeRobot {
 
     inner class HomeRobotCheck: BaseRobotCheck() {
 
-        fun checkVisibleLoading() = checkVisible(R.id.contentProgressBar)
+        fun checkVisibleLoading() = checkViewVisible(R.id.contentProgressBar)
 
         fun checkInvisibleLoading() = checkViewGone(R.id.contentProgressBar)
 
         fun checkVisibleSortingControls() {
-            checkVisible(R.id.sortedByTextView)
-            checkVisible(R.id.sortSpinner)
+            checkViewVisible(R.id.sortedByTextView)
+            checkViewVisible(R.id.sortSpinner)
         }
 
         fun checkHiddenSortingControls() {
@@ -118,18 +118,18 @@ class HomeRobot {
             checkViewGone(R.id.sortSpinner)
         }
 
-        fun checkVisibleShowList() = checkVisible(R.id.showsRecycleView)
+        fun checkVisibleShowList() = checkViewVisible(R.id.showsRecycleView)
 
         fun checkHiddenShowList() = checkViewGone(R.id.showsRecycleView)
 
         fun checkVisibleConnectionError() {
-            checkVisible(R.id.containerError)
-            checkText(R.id.errorTextView, R.string.connection_error_text)
+            checkViewVisible(R.id.containerError)
+            checkTextExistence(R.id.errorTextView, R.string.connection_error_text)
         }
 
         fun checkVisibleGenericError() {
-            checkVisible(R.id.containerError)
-            checkText(R.id.errorTextView, R.string.general_error_text)
+            checkViewVisible(R.id.containerError)
+            checkTextExistence(R.id.errorTextView, R.string.general_error_text)
         }
 
         fun checkSortByWorstVotedChange() {

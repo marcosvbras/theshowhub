@@ -27,8 +27,12 @@ class HomeViewModel(
     }
 
     fun sortShows(shows: List<Show>, sortOption: SortOption) {
-        val sortedShows = homeInteractor.sortBy(shows, sortOption)
-        homeViewStateLiveData.value = HomeViewState.SortedList(sortedShows)
+        viewModelScope.launch {
+            withContext(threadContextProvider.ui) {
+                val sortedShows = homeInteractor.sortBy(shows, sortOption)
+                homeViewStateLiveData.value = HomeViewState.SortedList(sortedShows)
+            }
+        }
     }
 
     private fun handleShowResult(result: Result<List<Show>>) = when(result) {

@@ -7,8 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 val appModule = module {
     viewModel { HomeViewModel(get(), get()) }
     factory { ThreadContextProvider() }
-    factory { HomeInteractor(get()) }
-    factory { HomeRepository(get(), get(), get()) }
+    factory { HomeInteractor(get(), get()) }
+    factory { HomeRepository(get(), get()) }
     factory { GsonConverterFactory.create() }
     factory { TheMovieAPIProvider.providesApi(get()) }
     factory { ShowMapper(get()) }
