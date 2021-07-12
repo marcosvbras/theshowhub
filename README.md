@@ -26,7 +26,7 @@ There's nothing unusual in the project setup when compared to any other simples 
 
 ### Design
 
-The layout of the solution was slightly inspired by [this amazing dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media) by Malik Abimany. But of course, I wasn't able to reproduce it entirely due to API info limitations.
+The layout of the solution was slightly inspired by [this amazing dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media) by Malik Abimany. Unfortunately, I wasn't able to reproduce it entirely due to API info limitations.
   
 ### Tech Stack
 
@@ -56,6 +56,11 @@ The layout of the solution was slightly inspired by [this amazing dribbble conce
 **Architectural Pattern**: 
 - MVVM (Model-View-ViewModel)
 
+**Approaches**:
+- SOLID
+- Clean Code by Uncle Bob
+- Clean Architecture by Uncle Bob
+
 **Design patterns**:
 - Adapter
 - Anti Corruption Layer Pattern
@@ -64,15 +69,9 @@ The layout of the solution was slightly inspired by [this amazing dribbble conce
 - Result Pattern
 
 **Test patterns**:
-- TDD (Test-Driven Development)
 - Robot Pattern
 
-**Approaches**:
-- SOLID
-- Clean Code by Uncle Bob
-- Clean Architecture by Uncle Bob
-
-### Quality Assurance
+### Quality Assurance Overview
 
 This project counts with two automated tests layers: ***Unit Test*** and ***Instrumentation Test***.
 

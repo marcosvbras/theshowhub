@@ -130,6 +130,46 @@ class HomeInteractorTest {
             assertEquals(expectedShowList, outputShowList)
         }
 
+        @Test
+        fun `WHEN it passed air date newest to oldest option it SHOULD return a descending list sorted by air date`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(airDate = "2019-08-12"),
+                ShowStubber.createDummyInstance().copy(airDate = "2019-09-01"),
+                ShowStubber.createDummyInstance().copy(airDate = "2021-01-04")
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(airDate = "2021-01-04"),
+                ShowStubber.createDummyInstance().copy(airDate = "2019-09-01"),
+                ShowStubber.createDummyInstance().copy(airDate = "2019-08-12")
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.AirDateNewest)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
+        @Test
+        fun `WHEN it passed air date oldest to newest option it SHOULD return an ascending list sorted by air date`() {
+            val inputShowList = listOf(
+                ShowStubber.createDummyInstance().copy(airDate = "2020-11-07"),
+                ShowStubber.createDummyInstance().copy(airDate = "2019-09-01"),
+                ShowStubber.createDummyInstance().copy(airDate = "1999-10-02")
+            )
+
+            val expectedShowList = listOf(
+                ShowStubber.createDummyInstance().copy(airDate = "1999-10-02"),
+                ShowStubber.createDummyInstance().copy(airDate = "2019-09-01"),
+                ShowStubber.createDummyInstance().copy(airDate = "2020-11-07")
+            )
+
+            val outputShowList = homeInteractor.sortBy(inputShowList, SortOption.AirDateOldest)
+
+            assertEquals(inputShowList.size, outputShowList.size)
+            assertEquals(expectedShowList, outputShowList)
+        }
+
     }
 
 }
