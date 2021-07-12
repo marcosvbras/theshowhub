@@ -17,8 +17,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 
-fun prepare(instance: HomeRobot.HomeRobotPrepare.() -> Unit) =
-    HomeRobot().HomeRobotPrepare().apply(instance)
+fun homeRobot(instance: HomeRobot.() -> Unit) = HomeRobot().apply(instance)
 
 class HomeRobot {
 
@@ -26,6 +25,10 @@ class HomeRobot {
     private val viewStateLiveData = MutableLiveData<HomeViewState>()
     private val showListStub = createInstanceList()
     private val sortedShowListStub = createInstanceList()
+    lateinit var activityScenario: ActivityScenario<HomeActivity>
+
+    fun prepare(instance: HomeRobot.HomeRobotPrepare.() -> Unit) =
+        HomeRobot().HomeRobotPrepare().apply(instance)
 
     inner class HomeRobotPrepare {
 
@@ -44,17 +47,17 @@ class HomeRobot {
             every { homeViewModel.getHomeViewStateLiveData() } returns viewStateLiveData
         }
 
+        fun showScreen() {
+            activityScenario = ActivityScenario.launch(
+                Intent(ApplicationProvider.getApplicationContext(), HomeActivity::class.java)
+            )
+        }
+
     }
 
     inner class HomeRobotAct: BaseRobotAction() {
 
         infix fun check(func: HomeRobotCheck.() -> Unit) = HomeRobotCheck().apply(func)
-
-        fun showScreen() {
-            ActivityScenario.launch<HomeActivity>(
-                Intent(ApplicationProvider.getApplicationContext(), HomeActivity::class.java)
-            )
-        }
 
         fun triggerLoadingOnViewState() = viewStateLiveData.postValue(HomeViewState.LoadingOn)
 
@@ -110,6 +113,8 @@ class HomeRobot {
 
     inner class HomeRobotCheck: BaseRobotCheck() {
 
+        infix fun finish(func: HomeRobotFinish.() -> Unit) = HomeRobotFinish().apply(func)
+
         fun checkVisibleLoading() = checkViewVisible(R.id.contentProgressBar)
 
         fun checkInvisibleLoading() = checkViewGone(R.id.contentProgressBar)
@@ -161,6 +166,12 @@ class HomeRobot {
         fun checkSortByAirDateOldestToNewest() {
             verify { homeViewModel.sortShows(showListStub, SortOption.AirDateOldest) }
         }
+
+    }
+
+    inner class HomeRobotFinish: BaseRobotFinish {
+
+        override fun closeScreenAndReleaseResources() = activityScenario.close()
 
     }
 

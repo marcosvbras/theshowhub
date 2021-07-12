@@ -53,6 +53,11 @@ android {
 
             all {
                 useJUnitPlatform()
+
+                testLogging {
+                    events "passed", "skipped", "failed"
+                    outputs.upToDateWhen { false }
+                }
             }
         }
     }
@@ -60,6 +65,7 @@ android {
     lintOptions {
         xmlReport false
         abortOnError true
+        error 'HardcodedText'
     }
 
 }

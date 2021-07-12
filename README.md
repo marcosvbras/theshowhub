@@ -1,4 +1,3 @@
-
 # The Show Hub
 Travis CI Status:
 [![Build Status](https://travis-ci.com/marcosvbras/theshowhub.svg?branch=master)](https://travis-ci.com/marcosvbras/theshowhub)
@@ -78,7 +77,13 @@ The layout of the solution was slightly inspired by [Malik Abimany's dribbble co
 
 ## Quality Assurance Overview :mag:
 
+### Automated Tests
+
 This project counts with two automated tests layers: ***Unit Test*** and ***Instrumentation Test***. They are covering all behaviors of the solution.
+
+For ***Unit Tests***, JUnit 5 is being used to have more powerful and descriptive tests, thanks to its ***Nested Tests*** feature. 
+
+For ***Instrumentation Tests***, Kotlin's beautiful way of writing Robots along side with Kotlin's `infix` functions have provided a simple way to work with the *Prepare-Act-Check* test approach, making it easy to maintain.
 
 ### Continuous Integration
 
@@ -104,7 +109,7 @@ There's no android lint issues for this project!
 
 ### Detekt Report
 
-There's no [detekt](https://detekt.github.io/detekt/) issues either :)
+There's no Kotlin issues either :)
 <p  align="center">
 <img  src="repoImages/detekt.png"  alt="Detekt Report"/>
 </p>

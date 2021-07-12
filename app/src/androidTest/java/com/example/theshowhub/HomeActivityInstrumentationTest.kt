@@ -6,163 +6,196 @@ class HomeActivityInstrumentationTest {
 
     @Test
     fun whenViewIsInLoadingOnState_shouldShowProgressBarOnly() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerLoadingOnViewState()
-        } check {
-            checkVisibleLoading()
-            checkHiddenSortingControls()
-            checkHiddenShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerLoadingOnViewState()
+            } check {
+                checkVisibleLoading()
+                checkHiddenSortingControls()
+                checkHiddenShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenViewIsInLoadingOffState_shouldHideProgressBar() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerLoadingOnViewState()
-            triggerLoadingOffViewState()
-        } check {
-            checkInvisibleLoading()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerLoadingOnViewState()
+                triggerLoadingOffViewState()
+            } check {
+                checkInvisibleLoading()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenViewIsInSuccessfulFetchingState_shouldPresentSortingControlsAndList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerLoadingOnViewState()
-            triggerLoadingOffViewState()
-            triggerSuccessfulListFetchingViewState()
-        } check {
-            checkVisibleSortingControls()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerLoadingOnViewState()
+                triggerLoadingOffViewState()
+                triggerSuccessfulListFetchingViewState()
+            } check {
+                checkVisibleSortingControls()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenViewIsInConnectionErrorState_shouldPresentOnlyErrorLayoutWithConnectionErrorText() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerConnectionErrorState()
-        } check {
-            checkHiddenSortingControls()
-            checkHiddenShowList()
-            checkInvisibleLoading()
-            checkVisibleConnectionError()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerConnectionErrorState()
+            } check {
+                checkHiddenSortingControls()
+                checkHiddenShowList()
+                checkInvisibleLoading()
+                checkVisibleConnectionError()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenViewIsInGenericErrorState_shouldPresentOnlyErrorLayoutWithGenericErrorText() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerGenericErrorState()
-        } check {
-            checkHiddenSortingControls()
-            checkHiddenShowList()
-            checkInvisibleLoading()
-            checkVisibleGenericError()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerGenericErrorState()
+            } check {
+                checkHiddenSortingControls()
+                checkHiddenShowList()
+                checkInvisibleLoading()
+                checkVisibleGenericError()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByWorstVoted_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByWorstVoted()
-            triggerSortedShowListState()
-        } check {
-            checkSortByWorstVotedChange()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByWorstVoted()
+                triggerSortedShowListState()
+            } check {
+                checkSortByWorstVotedChange()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByBestVoted_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByBestVoted()
-            triggerSortedShowListState()
-        } check {
-            checkSortByBestVotedChange()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByBestVoted()
+                triggerSortedShowListState()
+            } check {
+                checkSortByBestVotedChange()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByTitleAtoZ_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByTitleAtoZ()
-            triggerSortedShowListState()
-        } check {
-            checkSortByTitleAtoZChange()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByTitleAtoZ()
+                triggerSortedShowListState()
+            } check {
+                checkSortByTitleAtoZChange()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByTitleZtoA_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByTitleZtoA()
-            triggerSortedShowListState()
-        } check {
-            checkSortByTitleZtoAChange()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByTitleZtoA()
+                triggerSortedShowListState()
+            } check {
+                checkSortByTitleZtoAChange()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByAirDateNewestToOldest_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByAirDateNewestToOldest()
-            triggerSortedShowListState()
-        } check {
-            checkSortByAirDateNewestToOldest()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByAirDateNewestToOldest()
+                triggerSortedShowListState()
+            } check {
+                checkSortByAirDateNewestToOldest()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
     @Test
     fun whenAListIsSortedByAirDateOldestToNewest_shouldPresentTheNewList() {
-        prepare {
-
-        } act {
-            showScreen()
-            triggerSuccessfulListFetchingViewState()
-            sortByAirDateOldestToNewest()
-            triggerSortedShowListState()
-        } check {
-            checkSortByAirDateOldestToNewest()
-            checkVisibleShowList()
+        homeRobot {
+            prepare {
+                showScreen()
+            } act {
+                triggerSuccessfulListFetchingViewState()
+                sortByAirDateOldestToNewest()
+                triggerSortedShowListState()
+            } check {
+                checkSortByAirDateOldestToNewest()
+                checkVisibleShowList()
+            } finish {
+                closeScreenAndReleaseResources()
+            }
         }
     }
 
