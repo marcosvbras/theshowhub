@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.theshowhub.utils.ConnectionException
 import com.example.theshowhub.R
 import com.example.theshowhub.api.Show
 import com.example.theshowhub.databinding.ActivityHomeBinding
 import com.example.theshowhub.extensions.makeItGone
 import com.example.theshowhub.extensions.makeItVisible
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
+import java.net.UnknownHostException
 
 class HomeActivity : AppCompatActivity() {
 
@@ -72,7 +72,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun onError(exception: Exception) {
-        viewBinding.errorTextView.text = if (exception is ConnectionException)
+        viewBinding.errorTextView.text = if (exception is UnknownHostException)
             getString(R.string.connection_error_text)
         else
             getString(R.string.general_error_text)

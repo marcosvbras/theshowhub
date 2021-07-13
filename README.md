@@ -96,4 +96,5 @@ The layout of the solution was slightly inspired by [Malik Abimany's dribbble co
 
 ## If I had more time...
 
-It would be awesome to explore more details about **The Movie Api** and perhaps include more features like *Searching*, *Pagination* or even a *Watch List*. 
+It's noticeable that *Glide* is being used directly in this project, so I would try to create a Wrapper for it, in order to isolate its third party risks. 
+It would be awesome to explore more details about **The Movie Api** and perhaps include more features like *Searching*, *Pagination* or even a *Watch List*. Also, if this solution scaled, it would be important to analyse the necessity for modularization and perhaps a *Design System*.

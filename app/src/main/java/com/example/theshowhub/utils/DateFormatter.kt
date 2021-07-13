@@ -7,9 +7,9 @@ import java.util.Locale
 class DateFormatter {
 
     fun format(originalDate: String, inputFormat: String, outputFormat: String): String = try {
-        val format = SimpleDateFormat(inputFormat, Locale.US)
+        val format = SimpleDateFormat(inputFormat, Locale.getDefault())
         val date = format.parse(originalDate)
-        val newFormat = SimpleDateFormat(outputFormat, Locale.US)
+        val newFormat = SimpleDateFormat(outputFormat, Locale.getDefault())
 
         date?.run { newFormat.format(date) } ?: ""
     } catch (exception: Exception) {

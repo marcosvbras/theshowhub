@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import com.example.theshowhub.api.Show
-import com.example.theshowhub.utils.ConnectionException
 import com.example.theshowhub.home.HomeActivity
 import com.example.theshowhub.home.HomeViewModel
 import com.example.theshowhub.home.HomeViewState
@@ -16,6 +15,7 @@ import io.mockk.verify
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
+import java.net.UnknownHostException
 
 fun homeRobot(instance: HomeRobot.() -> Unit) = HomeRobot().apply(instance)
 
@@ -66,7 +66,7 @@ class HomeRobot {
         )
 
         fun triggerConnectionErrorState() = viewStateLiveData.postValue(
-            HomeViewState.FailedListFetching(ConnectionException())
+            HomeViewState.FailedListFetching(UnknownHostException())
         )
 
         fun triggerGenericErrorState() = viewStateLiveData.postValue(
