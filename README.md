@@ -94,7 +94,12 @@ The layout of the solution was slightly inspired by [Malik Abimany's dribbble co
 <img  src="repoImages/homeScreen.png"  alt="Home Screen"/>
 </p>
 
+<p align="center">
+<img  src="repoImages/homeScreenSorted.png"  alt="Home Screen Sorted"/>
+<img  src="repoImages/error.png"  alt="Error"/>
+</p>
+
 ## If I had more time...
 
 It's noticeable that *Glide* is being used directly in this project, so I would try to create a Wrapper for it, in order to isolate its third party risks. 
-It would be awesome to explore more details about **The Movie Api** and perhaps include more features like *Searching*, *Pagination* or even a *Watch List*. Also, if this solution scaled, it would be important to analyse the necessity for modularization and perhaps a *Design System*.
+It would be awesome to explore more details about **The Movie Api** and perhaps include more features like *Searching*, *Pagination* or even a *Watch List*. Also, if this solution scaled, it would be important to analyse the necessity for modularization. When it comes to layout, I would improve the views style by creating styles or even themes.
