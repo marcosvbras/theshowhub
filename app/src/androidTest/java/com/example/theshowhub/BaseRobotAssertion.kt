@@ -9,7 +9,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.Visibility
 
-open class BaseRobotCheck {
+open class BaseRobotAssertion {
 
     fun checkViewVisible(@IdRes viewId: Int) {
         onView(withId(viewId)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))

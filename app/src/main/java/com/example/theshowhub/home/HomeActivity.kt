@@ -54,7 +54,9 @@ class HomeActivity : AppCompatActivity() {
 
     private fun onSortedList(shows: List<Show>) {
         this.shows = shows
-        showAdapter.setShows(shows)
+        showAdapter.submitList(shows) {
+            viewBinding.showsRecycleView.smoothScrollToPosition(0)
+        }
     }
 
     private fun onLoadingStarted() = viewBinding.contentProgressBar.makeItVisible()
@@ -66,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
         this.shows = shows
         viewBinding.showsRecycleView.adapter = showAdapter
         viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
-        showAdapter.setShows(shows)
+        showAdapter.submitList(shows)
         setupSortSpinner()
         viewBinding.showsRecycleView.makeItVisible()
     }

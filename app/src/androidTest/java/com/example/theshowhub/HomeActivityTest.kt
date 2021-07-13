@@ -2,16 +2,16 @@ package com.example.theshowhub
 
 import org.junit.Test
 
-class HomeActivityInstrumentationTest {
+class HomeActivityTest {
 
     @Test
     fun whenViewIsInLoadingOnState_shouldShowProgressBarOnly() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerLoadingOnViewState()
-            } check {
+            } assert {
                 checkVisibleLoading()
                 checkHiddenSortingControls()
                 checkHiddenShowList()
@@ -24,12 +24,12 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenViewIsInLoadingOffState_shouldHideProgressBar() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerLoadingOnViewState()
                 triggerLoadingOffViewState()
-            } check {
+            } assert {
                 checkInvisibleLoading()
             } finish {
                 closeScreenAndReleaseResources()
@@ -40,13 +40,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenViewIsInSuccessfulFetchingState_shouldPresentSortingControlsAndList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerLoadingOnViewState()
                 triggerLoadingOffViewState()
                 triggerSuccessfulListFetchingViewState()
-            } check {
+            } assert {
                 checkVisibleSortingControls()
                 checkVisibleShowList()
             } finish {
@@ -58,11 +58,11 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenViewIsInConnectionErrorState_shouldPresentOnlyErrorLayoutWithConnectionErrorText() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerConnectionErrorState()
-            } check {
+            } assert {
                 checkHiddenSortingControls()
                 checkHiddenShowList()
                 checkInvisibleLoading()
@@ -76,11 +76,11 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenViewIsInGenericErrorState_shouldPresentOnlyErrorLayoutWithGenericErrorText() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerGenericErrorState()
-            } check {
+            } assert {
                 checkHiddenSortingControls()
                 checkHiddenShowList()
                 checkInvisibleLoading()
@@ -94,13 +94,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByWorstVoted_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByWorstVoted()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByWorstVotedChange()
                 checkVisibleShowList()
             } finish {
@@ -112,13 +112,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByBestVoted_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByBestVoted()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByBestVotedChange()
                 checkVisibleShowList()
             } finish {
@@ -130,13 +130,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByTitleAtoZ_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByTitleAtoZ()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByTitleAtoZChange()
                 checkVisibleShowList()
             } finish {
@@ -148,13 +148,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByTitleZtoA_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByTitleZtoA()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByTitleZtoAChange()
                 checkVisibleShowList()
             } finish {
@@ -166,13 +166,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByAirDateNewestToOldest_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByAirDateNewestToOldest()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByAirDateNewestToOldest()
                 checkVisibleShowList()
             } finish {
@@ -184,13 +184,13 @@ class HomeActivityInstrumentationTest {
     @Test
     fun whenAListIsSortedByAirDateOldestToNewest_shouldPresentTheNewList() {
         homeRobot {
-            prepare {
+            arrange {
                 showScreen()
             } act {
                 triggerSuccessfulListFetchingViewState()
                 sortByAirDateOldestToNewest()
                 triggerSortedShowListState()
-            } check {
+            } assert {
                 checkSortByAirDateOldestToNewest()
                 checkVisibleShowList()
             } finish {

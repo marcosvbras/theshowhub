@@ -27,10 +27,10 @@ class HomeRobot {
     private val sortedShowListStub = createInstanceList()
     lateinit var activityScenario: ActivityScenario<HomeActivity>
 
-    fun prepare(instance: HomeRobot.HomeRobotPrepare.() -> Unit) =
-        HomeRobot().HomeRobotPrepare().apply(instance)
+    fun arrange(instance: HomeRobot.HomeRobotArrange.() -> Unit) =
+        HomeRobot().HomeRobotArrange().apply(instance)
 
-    inner class HomeRobotPrepare {
+    inner class HomeRobotArrange {
 
         init {
             initKoin()
@@ -57,7 +57,7 @@ class HomeRobot {
 
     inner class HomeRobotAct: BaseRobotAction() {
 
-        infix fun check(func: HomeRobotCheck.() -> Unit) = HomeRobotCheck().apply(func)
+        infix fun assert(func: HomeRobotAssert.() -> Unit) = HomeRobotAssert().apply(func)
 
         fun triggerLoadingOnViewState() = viewStateLiveData.postValue(HomeViewState.LoadingOn)
 
@@ -111,7 +111,7 @@ class HomeRobot {
 
     }
 
-    inner class HomeRobotCheck: BaseRobotCheck() {
+    inner class HomeRobotAssert: BaseRobotAssertion() {
 
         infix fun finish(func: HomeRobotFinish.() -> Unit) = HomeRobotFinish().apply(func)
 

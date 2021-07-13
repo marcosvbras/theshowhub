@@ -22,15 +22,6 @@ The Show Hub is a simple Android app developed for a technical interview challen
 There's nothing unusual in the project setup when compared to any other simples apps, so you can just click on :arrow_forward: in Android Studio.
 
 ## Project Overview :triangular_ruler:
-
-### Design
-
-The layout of the solution was slightly inspired by [Malik Abimany's dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media). Unfortunately, I wasn't able to reproduce it entirely due to API data limitations.
-
-<p  align="center">
-<img  src="repoImages/startScreen.png"  alt="Start Screen"/>
-<img  src="repoImages/homeScreen.png"  alt="Home Screen"/>
-</p>
   
 ### Tech Stack
 
@@ -83,35 +74,26 @@ This project counts with two automated tests layers: ***Unit Test*** and ***Inst
 
 For ***Unit Tests***, JUnit 5 is being used to have more powerful and descriptive tests, thanks to its ***Nested Tests*** feature. 
 
-For ***Instrumentation Tests***, Kotlin's beautiful way of writing Robots along side with Kotlin's `infix` functions have provided a simple way to work with the *Prepare-Act-Check* test approach, making it easy to maintain.
+For ***Instrumentation Tests***, Kotlin's beautiful way of writing Robots along side with Kotlin's `infix` functions have provided a simple way to work with the *Arrange, Act and Assert* test pattern, making it easy to maintain.
 
 ### Continuous Integration
 
 This repository is linked to a ***[Travis CI](https://travis-ci.com/)*** pipeline:
 
-<p  align="center">
-<img  src="repoImages/travis.png"  alt="Travis CI"/>
-</p>
-
 **Pipeline steps**:
 1. Build
 2. Android Lint
-3. [Detekt](https://detekt.github.io/detekt/) Lint
+3. [Detekt Lint](https://detekt.github.io/detekt/)
 4. Unit Tests
 5. Instrumented Tests 
 
-### Android Lint Report
+## The Results
 
-There's no android lint issues for this project!
-<p  align="center">
-<img  src="repoImages/lint.png"  alt="Android Lint Report"/>
-</p>
+The layout of the solution was slightly inspired by [Malik Abimany's dribbble concept](https://dribbble.com/shots/15279034-Abda-Full-Screen-App/attachments/7032023?mode=media). Unfortunately, I wasn't able to reproduce it entirely due to API data limitations.
 
-### Detekt Report
-
-There's no Kotlin issues either :)
-<p  align="center">
-<img  src="repoImages/detekt.png"  alt="Detekt Report"/>
+<p align="center">
+<img  src="repoImages/startScreen.png"  alt="Start Screen"/>
+<img  src="repoImages/homeScreen.png"  alt="Home Screen"/>
 </p>
 
 ## If I had more time...
