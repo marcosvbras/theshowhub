@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.presentation
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.theshowhub.databinding.ItemOptionBinding
+import com.example.theshowhub.home.business.SortOption
 
 class SortAdapter(
     context: Activity, resourceId: Int, private val sortOptions: List<SortOption>

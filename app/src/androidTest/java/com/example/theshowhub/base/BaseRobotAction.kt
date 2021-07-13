@@ -1,4 +1,4 @@
-package com.example.theshowhub
+package com.example.theshowhub.base
 
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes

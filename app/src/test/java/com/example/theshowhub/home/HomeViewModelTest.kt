@@ -6,7 +6,11 @@ import com.example.theshowhub.api.Show
 import com.example.theshowhub.utils.Result
 import com.example.theshowhub.helpers.LiveDataTest
 import com.example.theshowhub.helpers.TestThreadContextProvider
-import com.example.theshowhub.home.HomeViewModel.Companion.SAVED_SHOW_STATE_KEY
+import com.example.theshowhub.home.business.HomeInteractor
+import com.example.theshowhub.home.business.SortOption
+import com.example.theshowhub.home.presentation.HomeViewModel
+import com.example.theshowhub.home.presentation.HomeViewModel.Companion.SAVED_SHOW_STATE_KEY
+import com.example.theshowhub.home.presentation.HomeViewState
 import com.example.theshowhub.stubbers.ShowStubber
 import io.mockk.every
 import io.mockk.coEvery

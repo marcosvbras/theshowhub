@@ -1,10 +1,10 @@
 package com.example.theshowhub.di
 
 import com.example.theshowhub.api.TheMovieAPIProvider
-import com.example.theshowhub.home.HomeInteractor
-import com.example.theshowhub.home.HomeRepository
-import com.example.theshowhub.home.HomeViewModel
-import com.example.theshowhub.home.ShowMapper
+import com.example.theshowhub.home.business.HomeInteractor
+import com.example.theshowhub.home.business.HomeRepository
+import com.example.theshowhub.home.presentation.HomeViewModel
+import com.example.theshowhub.home.business.ShowMapper
 import com.example.theshowhub.utils.DateFormatter
 import com.example.theshowhub.utils.ThreadContextProvider
 import org.koin.androidx.viewmodel.dsl.viewModel

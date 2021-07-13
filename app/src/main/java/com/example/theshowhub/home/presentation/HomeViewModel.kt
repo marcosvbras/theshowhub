@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,14 +7,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.theshowhub.utils.Result
 import com.example.theshowhub.api.Show
+import com.example.theshowhub.home.business.HomeInteractor
+import com.example.theshowhub.home.business.SortOption
 import com.example.theshowhub.utils.ThreadContextProvider
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HomeViewModel(
-    private val homeInteractor: HomeInteractor,
-    private val threadContextProvider: ThreadContextProvider,
-    private val savedStateHandle: SavedStateHandle
+        private val homeInteractor: HomeInteractor,
+        private val threadContextProvider: ThreadContextProvider,
+        private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private val homeViewStateLiveData by lazy { MutableLiveData<HomeViewState>() }

@@ -4,8 +4,9 @@ import com.example.theshowhub.utils.DateFormatter
 import com.example.theshowhub.utils.DateFormatter.Companion.MMM_YYYY
 import com.example.theshowhub.utils.DateFormatter.Companion.YYYY_MM_DD
 import com.example.theshowhub.api.Show
-import com.example.theshowhub.home.ShowMapper.Companion.IMAGE_PATH_DOMAIN
+import com.example.theshowhub.home.business.ShowMapper.Companion.IMAGE_PATH_DOMAIN
 import com.example.theshowhub.api.ShowResponse
+import com.example.theshowhub.home.business.ShowMapper
 import com.example.theshowhub.stubbers.ShowResponseStubber
 import io.mockk.every
 import io.mockk.mockk

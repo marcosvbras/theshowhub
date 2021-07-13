@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.presentation
 
 import com.example.theshowhub.api.Show
 

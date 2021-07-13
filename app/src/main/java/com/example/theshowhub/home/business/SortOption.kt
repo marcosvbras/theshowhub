@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.business
 
 import com.example.theshowhub.R
 

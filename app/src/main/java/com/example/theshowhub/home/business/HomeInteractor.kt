@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.business
 
 import com.example.theshowhub.utils.Result
 import com.example.theshowhub.api.Show
@@ -6,8 +6,8 @@ import com.example.theshowhub.utils.ThreadContextProvider
 import kotlinx.coroutines.withContext
 
 class HomeInteractor(
-    private val homeRepository: HomeRepository,
-    private val threadContextProvider: ThreadContextProvider
+        private val homeRepository: HomeRepository,
+        private val threadContextProvider: ThreadContextProvider
 ) {
 
     suspend fun fetchTopRatedShows(): Result<List<Show>> = try {

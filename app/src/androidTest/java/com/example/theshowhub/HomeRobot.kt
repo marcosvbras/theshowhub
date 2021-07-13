@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import com.example.theshowhub.api.Show
-import com.example.theshowhub.home.HomeActivity
-import com.example.theshowhub.home.HomeViewModel
-import com.example.theshowhub.home.HomeViewState
-import com.example.theshowhub.home.SortOption
+import com.example.theshowhub.base.BaseRobotAction
+import com.example.theshowhub.base.BaseRobotAssertion
+import com.example.theshowhub.base.BaseRobotFinish
+import com.example.theshowhub.home.presentation.HomeActivity
+import com.example.theshowhub.home.presentation.HomeViewModel
+import com.example.theshowhub.home.presentation.HomeViewState
+import com.example.theshowhub.home.business.SortOption
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

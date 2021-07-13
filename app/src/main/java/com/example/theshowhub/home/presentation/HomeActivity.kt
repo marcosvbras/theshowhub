@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.example.theshowhub.api.Show
 import com.example.theshowhub.databinding.ActivityHomeBinding
 import com.example.theshowhub.extensions.makeItGone
 import com.example.theshowhub.extensions.makeItVisible
+import com.example.theshowhub.home.business.SortOption
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import java.net.UnknownHostException
 

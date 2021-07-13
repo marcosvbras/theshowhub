@@ -1,4 +1,4 @@
-package com.example.theshowhub.home
+package com.example.theshowhub.home.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
