@@ -78,9 +78,7 @@ For ***Instrumentation Tests***, Kotlin's beautiful way of writing Robots along 
 
 ### Continuous Integration
 
-This repository is linked to a ***[Travis CI](https://travis-ci.com/)*** pipeline:
-
-**Pipeline steps**:
+This repository is linked to a ***[Travis CI](https://travis-ci.com/)*** pipeline and it has the following steps:
 1. Build
 2. Android Lint
 3. [Detekt Lint](https://detekt.github.io/detekt/)

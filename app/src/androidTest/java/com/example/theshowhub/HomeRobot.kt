@@ -39,9 +39,7 @@ class HomeRobot {
 
         infix fun act(func: HomeRobotAct.() -> Unit): HomeRobotAct = HomeRobotAct().apply(func)
 
-        private fun initKoin() = loadKoinModules(
-            module { viewModel(override = true) { homeViewModel } }
-        )
+        private fun initKoin() = loadKoinModules(module = module { viewModel { homeViewModel } })
 
         private fun setupViewModelMock() {
             every { homeViewModel.getHomeViewStateLiveData() } returns viewStateLiveData

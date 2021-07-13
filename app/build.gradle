@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -83,8 +84,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
 
-    implementation "org.koin:koin-androidx-ext:$koinVersion"
-    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+    implementation "io.insert-koin:koin-android:$koinVersion"
 
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
@@ -96,16 +96,13 @@ dependencies {
     testImplementation "androidx.test:runner:$androidXTestVersion"
     testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "androidx.arch.core:core-testing:$androidXCoreTestVersion"
-    testImplementation "org.koin:koin-test:$koinVersion"
+    testImplementation "io.insert-koin:koin-test:$koinVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$junitJupiterVersion"
-    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"
 
     androidTestImplementation "androidx.test.ext:junit:$androidXJUnitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
-    androidTestImplementation "org.koin:koin-androidx-viewmodel:$koinVersion"
     androidTestImplementation "io.mockk:mockk-android:$mockkVersion"
-    androidTestImplementation "org.koin:koin-test:$koinVersion"
 }

@@ -11,14 +11,13 @@ import com.example.theshowhub.api.Show
 import com.example.theshowhub.databinding.ActivityHomeBinding
 import com.example.theshowhub.extensions.makeItGone
 import com.example.theshowhub.extensions.makeItVisible
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.stateViewModel
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityHomeBinding
-    private val viewModel: HomeViewModel by viewModel()
+    private val viewModel: HomeViewModel by stateViewModel()
     private val showAdapter by lazy { ShowAdapter() }
-    private var shows = listOf<Show>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,10 +49,10 @@ class HomeActivity : AppCompatActivity() {
         is HomeViewState.SuccessfulListFetching -> onListFetched(homeViewState.shows)
         is HomeViewState.FailedListFetching -> onError(homeViewState.exception)
         is HomeViewState.SortedList -> onSortedList(homeViewState.shows)
+        is HomeViewState.CachedShowsRestored -> onListFetched(homeViewState.shows)
     }
 
     private fun onSortedList(shows: List<Show>) {
-        this.shows = shows
         showAdapter.submitList(shows) {
             viewBinding.showsRecycleView.smoothScrollToPosition(0)
         }
@@ -65,7 +64,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun onListFetched(shows: List<Show>) {
         viewBinding.containerError.makeItGone()
-        this.shows = shows
         viewBinding.showsRecycleView.adapter = showAdapter
         viewBinding.showsRecycleView.layoutManager = LinearLayoutManager(this)
         showAdapter.submitList(shows)
@@ -88,7 +86,7 @@ class HomeActivity : AppCompatActivity() {
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
                 val sortOption = parent?.getItemAtPosition(position) as SortOption
-                viewModel.sortShows(shows, sortOption)
+                viewModel.sortShows(showAdapter.currentList, sortOption)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) = Unit

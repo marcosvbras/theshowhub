@@ -1,5 +1,9 @@
 package com.example.theshowhub.api
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Show(
         val id: Int,
         val name: String,
@@ -7,4 +11,4 @@ data class Show(
         val voteAverage: Float,
         val airDate: String,
         val formattedAirDate: String
-)
+): Parcelable
